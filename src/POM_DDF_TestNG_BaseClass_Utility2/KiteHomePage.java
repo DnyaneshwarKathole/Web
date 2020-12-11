@@ -1,0 +1,22 @@
+package POM_DDF_TestNG_BaseClass_Utility2;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class KiteHomePage {
+	
+	@FindBy(xpath="//span[@class='nickname']") private WebElement PN;
+	
+	public KiteHomePage(WebDriver driver) {
+	PageFactory.initElements(driver, this);
+	}
+	
+	public String getKiteHomePageProfileName()
+	{
+	String act=PN.getText();
+	return act;
+	}
+	
+}
